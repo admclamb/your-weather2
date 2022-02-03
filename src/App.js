@@ -4,6 +4,7 @@ import { getWeather } from "./api/getWeather";
 import "./App.css";
 import { getCurrentPosition } from "./api/getCurrentPosition";
 import { objHasProperties } from "./utils/objHasProperties";
+import Layout from "./layout";
 function App() {
   const [weather, setWeather] = useState({});
   // const [location, setLocation] = useState({});
@@ -39,10 +40,10 @@ function App() {
       abortController.abort();
     };
   }, []);
-
+  console.log(weather);
   return (
     <div className="App">
-      {(objHasProperties(weather) && <h1>Weather returned</h1>) || (
+      {(objHasProperties(weather) && <Layout weather={weather} />) || (
         <NoWeather />
       )}
     </div>
