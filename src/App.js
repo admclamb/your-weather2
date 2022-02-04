@@ -5,23 +5,26 @@ import "./App.css";
 import { getCurrentPosition } from "./api/getCurrentPosition";
 import { objHasProperties } from "./utils/objHasProperties";
 import Layout from "./layout";
+import { getLocation } from "./api/getLocation";
 function App() {
   const [weather, setWeather] = useState({});
-  // const [location, setLocation] = useState({});
+  const [location, setLocation] = useState({});
   const [coords, setCoords] = useState({});
   useEffect(() => {
     setWeather({});
     const abortController = new AbortController();
     getWeather(coords)
       .then((response) => setWeather(response))
-      .then(console.log)
       .catch((error) => console.log(error));
 
+    getLocation(coords)
+      .then((response) => setLocation(response))
+      .catch((error) => console.log(error));
     return () => {
       abortController.abort();
     };
   }, [coords]);
-
+  console.log(location);
   // Get weather on page load if user allows geolocation
   useEffect(() => {
     const abortController = new AbortController();
@@ -41,11 +44,12 @@ function App() {
     };
   }, []);
   console.log(weather);
+
   return (
     <div className="App">
-      {(objHasProperties(weather) && <Layout weather={weather} />) || (
-        <NoWeather />
-      )}
+      {(objHasProperties(weather) && (
+        <Layout weather={weather} setCoords={setCoords} location={location} />
+      )) || <NoWeather />}
     </div>
   );
 }

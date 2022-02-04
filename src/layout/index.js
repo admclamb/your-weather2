@@ -7,13 +7,12 @@ import Today from "../today/Today";
 import Hourly from "../hourly/Hourly";
 import Home from "../home/Home";
 import Settings from "../settings/Settigs";
-import { objHasProperties } from "../utils/objHasProperties";
 
-const Layout = ({ weather }) => {
+const Layout = ({ weather, setCoords, location }) => {
   const news = {};
   return (
     <>
-      <Header />
+      <Header weather={weather} setCoords={setCoords} location={location} />
       <Routes>
         <Route path="/daily" element={<Daily weather={weather} />} />
         <Route path="/today" element={<Today weather={weather} />} />

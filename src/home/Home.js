@@ -1,6 +1,6 @@
 import React from "react";
 import MainNews from "../news/MainNews";
-
+import NationalAlerts from "../nationalAlerts/NationalAlerts";
 const Home = ({ weather, news }) => {
   return (
     <main className="container mb-4 home">

@@ -1,21 +1,23 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm";
 import "./Navbar.css";
 
-const Navbar = ({ setLocation, weather, tempConv }) => {
+const Navbar = ({ setCoords, location }) => {
   return (
     <>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container">
           <div className="d-flex align-items-center">
             <a className="navbar-brand">Weatherly</a>
-            <div className="text-light d-flex ">
-              <p className="me-2"></p>
-              <p></p>
+            <div className="text-light d-flex align-items">
+              <p className="me-2 pt-3">
+                {location && location[0].name}, {location && location[0].state}
+              </p>
             </div>
           </div>
 
-          <SearchForm setLocation={setLocation} />
+          <SearchForm setCoords={setCoords} />
         </div>
       </nav>
       <div className="container">

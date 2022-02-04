@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { getGeocoding } from "../api/getGeocoding";
+import { getCoordsFromPlace } from "../api/getCoordsFromPlace";
 import "./SearchForm.css";
 
-const SearchForm = ({ setLocation }) => {
+const SearchForm = ({ setCoords }) => {
   const [city, setCity] = useState("");
-  const [response, setResponse] = useState("");
   const handleChange = ({ target }) => {
     setCity(target.value);
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const geoLocation = await getGeocoding(setLocation, city);
+    const { lat, lon } = await getCoordsFromPlace(city);
     setCity("");
-    setResponse(geoLocation);
+    if (lat && lon) {
+      setCoords({ lat, lon });
+    }
   };
 
   return (
-    <form className={"d-flex input-group w-auto searchbar" + " " + response}>
+    <form className="d-flex input-group w-auto searchbar">
       <button
         className="input-group-text border-0 search-icon"
         id="search-addon"
