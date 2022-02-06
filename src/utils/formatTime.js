@@ -14,3 +14,16 @@ export function addMeridiem(unix) {
   if (hours > 12) return " PM";
   return " AM";
 }
+
+export function getDay(unix) {
+  return new Date(unix * 1000)
+    .toLocaleString("en-US", { day: "numeric" })
+    .toString()
+    .padStart(2, "0");
+}
+
+export function getDayOfWeek(unix) {
+  const date = new Date(unix * 1000);
+  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return weekdays[date.getDay()];
+}

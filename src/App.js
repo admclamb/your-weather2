@@ -7,9 +7,11 @@ import { objHasProperties } from "./utils/objHasProperties";
 import Layout from "./layout";
 import { getLocation } from "./api/getLocation";
 import { getNews } from "./api/getNews";
+import { getAirPollution } from "./api/getAirPollution";
 function App() {
   const [weather, setWeather] = useState({});
   const [location, setLocation] = useState({});
+  const [airPollution, setAirPollution] = useState({});
   const [coords, setCoords] = useState({});
   const [news, setNews] = useState({});
   const [unitOfMeasure, setUnitOfMeasure] = useState("imperial");
@@ -23,6 +25,10 @@ function App() {
 
     getLocation(coords)
       .then((response) => setLocation(response))
+      .catch((error) => console.log(error));
+
+    getAirPollution(coords)
+      .then((response) => setAirPollution(response))
       .catch((error) => console.log(error));
     return () => {
       abortController.abort();
@@ -67,6 +73,7 @@ function App() {
           location={location}
           news={news}
           setUnitOfMeasure={setUnitOfMeasure}
+          airPollution={airPollution}
         />
       )) || <NoWeather />}
     </div>

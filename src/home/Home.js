@@ -3,7 +3,8 @@ import MainNews from "../news/MainNews";
 import NationalAlerts from "../nationalAlerts/NationalAlerts";
 import Current from "../current/Current";
 import Forecast from "../forecast/Forecast";
-const Home = ({ weather, news, location }) => {
+import AirQuality from "../airPollution/AirQuality";
+const Home = ({ weather, news, location, airPollution }) => {
   return (
     <main className="container mb-4 home">
       <section className="row">
@@ -16,6 +17,9 @@ const Home = ({ weather, news, location }) => {
           {weather.alerts && <NationalAlerts alerts={weather.alerts} />}
           <Forecast weather={weather} />
           <Current weather={weather} location={location} />
+        </article>
+        <article className="col col-12 col-md-4">
+          <AirQuality airPollution={airPollution} />
         </article>
       </section>
     </main>

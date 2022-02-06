@@ -26,7 +26,9 @@ const MainNews = ({ news }) => {
       }}
     >
       <h6 className="display-6 text-light mt-5">{title}</h6>
-      <p className="lead mt-3 text-light">{description}</p>
+      <p className="lead mt-3 text-light d-none d-md-block pb-md-3">
+        {description}
+      </p>
       <div className="d-flex mt-auto justify-content-between">
         <p className="text-light">By: {author}</p>
         <a

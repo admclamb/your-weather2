@@ -1,0 +1,6 @@
+/* Remove day from daily weather  on smaller screens */
+@media all and (max-width: 478px) {
+  #daily-weather-4 {
+    display: none !important;
+  }
+}
