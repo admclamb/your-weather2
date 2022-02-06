@@ -11,7 +11,7 @@ const Navbar = ({ setCoords, location }) => {
           <div className="d-flex align-items-center">
             <a className="navbar-brand">Weatherly</a>
             <div className="text-light d-flex align-items">
-              <p className="me-2 pt-3">
+              <p className="me-2">
                 {location && location[0].name}, {location && location[0].state}
               </p>
             </div>

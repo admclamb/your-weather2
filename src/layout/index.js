@@ -8,8 +8,7 @@ import Hourly from "../hourly/Hourly";
 import Home from "../home/Home";
 import Settings from "../settings/Settigs";
 
-const Layout = ({ weather, setCoords, location }) => {
-  const news = {};
+const Layout = ({ weather, setCoords, location, news, setUnitOfMeasure }) => {
   return (
     <>
       <Header weather={weather} setCoords={setCoords} location={location} />
@@ -17,8 +16,16 @@ const Layout = ({ weather, setCoords, location }) => {
         <Route path="/daily" element={<Daily weather={weather} />} />
         <Route path="/today" element={<Today weather={weather} />} />
         <Route path="/hourly" element={<Hourly weather={weather} />} />
-        <Route path="/" element={<Home weather={weather} news={news} />} />
-        <Route path="/settings" element={<Settings weather={weather} />} />
+        <Route
+          path="/"
+          element={<Home weather={weather} news={news} location={location} />}
+        />
+        <Route
+          path="/settings"
+          element={
+            <Settings weather={weather} setUnitOfMeasure={setUnitOfMeasure} />
+          }
+        />
       </Routes>
       <Footer />
     </>

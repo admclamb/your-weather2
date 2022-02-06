@@ -6,14 +6,18 @@ import { getCurrentPosition } from "./api/getCurrentPosition";
 import { objHasProperties } from "./utils/objHasProperties";
 import Layout from "./layout";
 import { getLocation } from "./api/getLocation";
+import { getNews } from "./api/getNews";
 function App() {
   const [weather, setWeather] = useState({});
   const [location, setLocation] = useState({});
   const [coords, setCoords] = useState({});
+  const [news, setNews] = useState({});
+  const [unitOfMeasure, setUnitOfMeasure] = useState("imperial");
+
   useEffect(() => {
     setWeather({});
     const abortController = new AbortController();
-    getWeather(coords)
+    getWeather(coords, unitOfMeasure)
       .then((response) => setWeather(response))
       .catch((error) => console.log(error));
 
@@ -24,10 +28,10 @@ function App() {
       abortController.abort();
     };
   }, [coords]);
-  console.log(location);
-  // Get weather on page load if user allows geolocation
+
   useEffect(() => {
     const abortController = new AbortController();
+    // Get weather on page load if user allows geolocation
     const getCoordinates = async () => {
       try {
         const { coords } = await getCurrentPosition();
@@ -38,17 +42,32 @@ function App() {
         console.log(error);
       }
     };
+    // Get news on page load
+    const getNewsData = async () => {
+      try {
+        const newsFromAPI = await getNews();
+        setNews(newsFromAPI);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getNewsData();
+
     getCoordinates();
     return () => {
       abortController.abort();
     };
   }, []);
-  console.log(weather);
-
   return (
     <div className="App">
-      {(objHasProperties(weather) && (
-        <Layout weather={weather} setCoords={setCoords} location={location} />
+      {(objHasProperties(weather) && location.length > 0 && (
+        <Layout
+          weather={weather}
+          setCoords={setCoords}
+          location={location}
+          news={news}
+          setUnitOfMeasure={setUnitOfMeasure}
+        />
       )) || <NoWeather />}
     </div>
   );
