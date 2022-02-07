@@ -74,6 +74,7 @@ function App() {
           news={news}
           setUnitOfMeasure={setUnitOfMeasure}
           airPollution={airPollution}
+          coords={coords}
         />
       )) || <NoWeather />}
     </div>

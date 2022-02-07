@@ -4,7 +4,10 @@ import NationalAlerts from "../nationalAlerts/NationalAlerts";
 import Current from "../current/Current";
 import Forecast from "../forecast/Forecast";
 import AirQuality from "../airPollution/AirQuality";
-const Home = ({ weather, news, location, airPollution }) => {
+import Today from "../today/Today";
+import Map from "../map/Map";
+const Home = ({ weather, news, location, airPollution, coords }) => {
+  console.log(weather);
   return (
     <main className="container mb-4 home">
       <section className="row">
@@ -17,6 +20,8 @@ const Home = ({ weather, news, location, airPollution }) => {
           {weather.alerts && <NationalAlerts alerts={weather.alerts} />}
           <Forecast weather={weather} />
           <Current weather={weather} location={location} />
+          <Today weather={weather} />
+          <Map coords={coords} />
         </article>
         <article className="col col-12 col-md-4">
           <AirQuality airPollution={airPollution} />

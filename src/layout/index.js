@@ -15,6 +15,7 @@ const Layout = ({
   news,
   setUnitOfMeasure,
   airPollution,
+  coords,
 }) => {
   return (
     <>
@@ -31,6 +32,7 @@ const Layout = ({
               news={news}
               location={location}
               airPollution={airPollution}
+              coords={coords}
             />
           }
         />

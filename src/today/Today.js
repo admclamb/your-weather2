@@ -1,4 +1,5 @@
-const Today = () => {
+const Today = ({ weather }) => {
+  console.log(weather);
   return null;
 };
 
