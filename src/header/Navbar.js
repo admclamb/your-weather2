@@ -25,11 +25,12 @@ const Navbar = ({ setCoords, location }) => {
           <Link to="/" className="me-3 p-1">
             <h5>Home</h5>
           </Link>
-          <Link to="/today" className="me-3 p-1">
-            <h5>Today</h5>
+          <Link to="/hourly" className="me-3 p-1">
+            <h5>Hourly</h5>
           </Link>
+
           <Link to="/daily" className="me-3 p-1">
-            <h5>Daily</h5>
+            <h5>5 Days</h5>
           </Link>
         </nav>
       </div>

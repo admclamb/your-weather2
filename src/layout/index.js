@@ -23,7 +23,10 @@ const Layout = ({
       <Routes>
         <Route path="/daily" element={<Daily weather={weather} />} />
         <Route path="/today" element={<Today weather={weather} />} />
-        <Route path="/hourly" element={<Hourly weather={weather} />} />
+        <Route
+          path="/hourly"
+          element={<Hourly weather={weather} location={location} />}
+        />
         <Route
           path="/"
           element={

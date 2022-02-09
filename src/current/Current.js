@@ -6,7 +6,6 @@ import Spinner from "../utils/Spinner";
 
 const Current = ({ weather, location }) => {
   if (!objHasProperties(weather)) return <Spinner />;
-  console.log(weather);
   const { humidity, wind_gust, dt, temp, feels_like } = weather.current;
   const { main, icon } = weather.current.weather[0];
   const time = unixToHHMM(dt) + addMeridiem(dt);

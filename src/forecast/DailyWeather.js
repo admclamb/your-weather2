@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { getDay, getDayOfWeek } from "../utils/formatTime";
 
 const DailyWeather = ({ day, index }) => {
-  console.log(day);
   const { dt, pop, temp, weather } = day;
   const { max, min } = temp;
   const { icon, main } = weather[0];
@@ -25,7 +24,7 @@ const DailyWeather = ({ day, index }) => {
       />
       <p className="text-muted">
         <i className="fas fa-tint me-1"></i>
-        {pop * 100}%
+        {(pop * 100).toFixed(0)}%
       </p>
     </Link>
   );

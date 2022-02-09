@@ -5,6 +5,5 @@ export async function getMap() {
     `https://tile.openweathermap.org/map/${layer}/${15}/${5}/${5}.png?appid=${KEY}`
   );
   const mapFromAPI = await response.json();
-  console.log(mapFromAPI);
   return mapFromAPI;
 }

@@ -3,7 +3,6 @@ import { objHasProperties } from "../utils/objHasProperties";
 
 const AirQuality = ({ airPollution }) => {
   if (!objHasProperties(airPollution)) return null;
-  console.log(airPollution);
   const { main, components } = airPollution.list[0];
   const { co, no2, o3, so2 } = components;
   const { aqi } = main;
