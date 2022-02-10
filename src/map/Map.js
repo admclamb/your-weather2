@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { getMap } from "../api/getMap";
+// import React, { useEffect } from "react";
+// import { getMap } from "../api/getMap";
 const Map = ({ coords }) => {
   // useEffect(() => {
   //   const abortController = new AbortController();
