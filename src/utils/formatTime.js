@@ -7,6 +7,13 @@ export function unixToHHMM(unix) {
   return hours + ":" + minutes;
 }
 
+export function unixToHH(unix) {
+  const date = new Date(unix * 1000);
+  let hours = date.getHours();
+  if (hours > 12) hours -= 12;
+  return hours;
+}
+
 // Add pm or am based on time
 export function addMeridiem(unix) {
   const date = new Date(unix * 1000);

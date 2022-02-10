@@ -6,6 +6,8 @@ import Forecast from "../forecast/Forecast";
 import AirQuality from "../airPollution/AirQuality";
 import Today from "../today/Today";
 import Map from "../map/Map";
+import NewsWidgetSM from "../news/NewsWidgetSM";
+import Hourly from "../hourly/Hourly";
 const Home = ({ weather, news, location, airPollution, coords }) => {
   return (
     <main className="container mb-4 home">
@@ -20,10 +22,12 @@ const Home = ({ weather, news, location, airPollution, coords }) => {
           <Forecast weather={weather} />
           <Current weather={weather} location={location} />
           <Today weather={weather} />
+          <Hourly weather={weather} />
           <Map coords={coords} />
         </article>
         <article className="col col-12 col-md-4">
           <AirQuality airPollution={airPollution} />
+          <NewsWidgetSM news={news} />
         </article>
       </section>
     </main>

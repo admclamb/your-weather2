@@ -3,7 +3,7 @@ import { objHasProperties } from "../utils/objHasProperties";
 import Spinner from "../utils/Spinner";
 import HourlyDisplay from "./HourDisplay";
 
-const Hourly = ({ weather }) => {
+const WeatherList = ({ weather, location }) => {
   if (!objHasProperties(weather)) return <Spinner />;
 
   const hourlyArr = weather.hourly.map((hour, index) => {
@@ -11,13 +11,14 @@ const Hourly = ({ weather }) => {
   });
 
   return (
-    <div className="container bg-light p-3 mt-3">
+    <div className="container bg-light p-3">
       <div className="d-flex align-items-center">
-        <h5 className="mb-3">Hourly Weather</h5>
+        <h4 className="me-1">Hourly Weather</h4>
+        <h6 className="mt-1">{location[0] ? `- ${location[0].name}` : ""}</h6>
       </div>
       <div className="d-flex justify-content-between">{hourlyArr}</div>
     </div>
   );
 };
 
-export default Hourly;
+export default WeatherList;

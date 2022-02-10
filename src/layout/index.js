@@ -21,7 +21,10 @@ const Layout = ({
     <>
       <Header weather={weather} setCoords={setCoords} location={location} />
       <Routes>
-        <Route path="/daily" element={<Daily weather={weather} />} />
+        <Route
+          path="/daily"
+          element={<Daily weather={weather} location={location} />}
+        />
         <Route path="/today" element={<Today weather={weather} />} />
         <Route
           path="/hourly"
