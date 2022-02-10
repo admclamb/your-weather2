@@ -1,4 +1,4 @@
-import { changeUnixToDay, changeUnixToHH } from "../helpers/changeUnixTime";
+import { addMeridiem, getDayOfWeek, unixToHHMM } from "../utils/formatTime";
 import { rotate180 } from "../helpers/rotate180";
 import { GetIcon } from "../helpers/GetIcon";
 const DayCard = ({ dayWeather, index }) => {
@@ -14,17 +14,11 @@ const DayCard = ({ dayWeather, index }) => {
     uvi,
     sunrise,
     sunset,
-    moonrise,
-    moonset,
-    moon_phase,
   } = dayWeather;
   const { id, description } = weather[0];
-  const day = changeUnixToDay(dt);
-  min = tempConv(min);
-  max = tempConv(max);
-  sunrise = changeUnixToHH(sunrise);
-  sunset = changeUnixToHH(sunset);
-
+  const day = getDayOfWeek(dt);
+  sunrise = unixToHHMM(sunrise);
+  sunset = unixToHHMM(sunset);
   return (
     <>
       <div className="d-flex justify-content-between align-items-center p-2 ">
@@ -53,7 +47,6 @@ const DayCard = ({ dayWeather, index }) => {
             data-bs-target={"#collapseDetails" + index}
             aria-expanded="false"
             aria-controls="collapseDetails"
-            onClick={rotate180}
           >
             <i className="fas fa-chevron-down rotateOriginal"></i>
           </button>
