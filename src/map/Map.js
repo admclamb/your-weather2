@@ -1,3 +1,4 @@
+import React from "react";
 // import React, { useEffect } from "react";
 // import { getMap } from "../api/getMap";
 const Map = ({ coords }) => {
@@ -27,6 +28,7 @@ const Map = ({ coords }) => {
   //     abortController.abort();
   //   };
   // }, [coords]);
+  console.log(coords);
   return (
     <div className="bg-light mt-3 p-3">
       <h1>Map</h1>
