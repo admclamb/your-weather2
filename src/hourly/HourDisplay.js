@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { addMeridiem, unixToHH } from "../utils/formatTime";
-const HourlyDisplay = ({ hour }) => {
+const HourlyDisplay = ({ hour, index }) => {
   const { dt, temp, weather, pop } = hour;
   const { main, icon } = weather[0];
   const time = unixToHH(dt) + addMeridiem(dt);
   // Get rid of the type of temp on the end
+
   return (
     <Link
       to={`/`}

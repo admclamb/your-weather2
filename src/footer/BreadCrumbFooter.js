@@ -1,9 +1,9 @@
 import React from "react";
+import { objHasProperties } from "../utils/objHasProperties";
 // import objHasProperties from "../utils/objHasProperties";
 import "./BreadCrumbFooter.css";
 const BreadCrumbFooter = ({ weather }) => {
-  return null;
-  if (!objHasProperties(weather)) return null;
+  if (!objHasProperties(weather)) return "Your Weather";
   const { country, state, name } = weather.locationInfo[0];
   return (
     <nav aria-label="breadcrumb" className="breadcrumb-footer p-3 text-dark">

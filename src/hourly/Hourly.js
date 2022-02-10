@@ -7,7 +7,7 @@ const Hourly = ({ weather }) => {
   if (!objHasProperties(weather)) return <Spinner />;
 
   const hourlyArr = weather.hourly.map((hour, index) => {
-    return index < 6 && <HourlyDisplay hour={hour} />;
+    return index < 6 && <HourlyDisplay hour={hour} index={index} />;
   });
 
   return (
