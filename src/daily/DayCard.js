@@ -1,21 +1,19 @@
-import { addMeridiem, getDayOfWeek, unixToHHMM } from "../utils/formatTime";
-import { rotate180 } from "../helpers/rotate180";
-import { GetIcon } from "../helpers/GetIcon";
+import React from "react";
+import { getDayOfWeek, unixToHHMM } from "../utils/formatTime";
 const DayCard = ({ dayWeather, index }) => {
   if (!dayWeather) return null;
   let {
     dt,
-    temp: { min, max, night },
+    temp: { min, max },
     pop,
     wind_speed,
     wind_gust,
     weather,
-    humidity,
     uvi,
     sunrise,
     sunset,
   } = dayWeather;
-  const { id, description } = weather[0];
+  const { icon, main, description } = weather[0];
   const day = getDayOfWeek(dt);
   sunrise = unixToHHMM(sunrise);
   sunset = unixToHHMM(sunset);
@@ -28,7 +26,10 @@ const DayCard = ({ dayWeather, index }) => {
             <h6 className="mt-1">{max}</h6>
             <p className="text-muted">/ {min}</p>
           </div>
-          <i className={GetIcon(id, "sm", "yes")}></i>
+          <img
+            src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+            alt={main}
+          />
           <p className="ms-5">{description}</p>
         </div>
         <div className="d-flex align-items-center">
