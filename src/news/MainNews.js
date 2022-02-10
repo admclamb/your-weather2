@@ -16,7 +16,7 @@ const MainNews = ({ news }) => {
   if (!objHasProperties(news)) return null;
   return (
     <div
-      className="jumbotron-fluid d-flex flex-column justify-content-center p-4 mb-4"
+      className="jumbotron-fluid d-flex flex-column justify-content-center p-4 mb-2"
       style={{
         background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${urlToImage})`,
         backgroundRepeat: "no-repeat",

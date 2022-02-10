@@ -23,7 +23,7 @@ const Layout = ({
       <Routes>
         <Route
           path="/daily"
-          element={<Daily weather={weather} location={location} />}
+          element={<Daily weather={weather} location={location} news={news} />}
         />
         <Route path="/today" element={<Today weather={weather} />} />
         <Route
@@ -49,7 +49,7 @@ const Layout = ({
           }
         />
       </Routes>
-      <Footer />
+      <Footer location={location} />
     </>
   );
 };

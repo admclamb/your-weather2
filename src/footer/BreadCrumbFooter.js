@@ -2,9 +2,15 @@ import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
 // import objHasProperties from "../utils/objHasProperties";
 import "./BreadCrumbFooter.css";
-const BreadCrumbFooter = ({ weather }) => {
-  if (!objHasProperties(weather)) return "Your Weather";
-  const { country, state, name } = weather.locationInfo[0];
+const BreadCrumbFooter = ({ location }) => {
+  if (!objHasProperties(location)) {
+    return (
+      <nav aria-label="breadcrumb" className="breadcrumb-footer p-4 text-dark">
+        {" "}
+      </nav>
+    );
+  }
+  const { country, state, name } = location;
   return (
     <nav aria-label="breadcrumb" className="breadcrumb-footer p-3 text-dark">
       <div className="container">

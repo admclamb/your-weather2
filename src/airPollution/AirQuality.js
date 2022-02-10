@@ -17,7 +17,7 @@ const AirQuality = ({ airPollution }) => {
   const quality = qualities[aqi];
 
   return (
-    <div className="p-3 border bg-light">
+    <div className="p-3 border bg-light mt-3">
       <h5>Air Quality</h5>
       <p className={quality.color + " p-4 text-center display-6"}>
         {quality.description}

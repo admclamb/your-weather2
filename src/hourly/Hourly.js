@@ -5,9 +5,19 @@ import HourlyDisplay from "./HourDisplay";
 
 const Hourly = ({ weather }) => {
   if (!objHasProperties(weather)) return <Spinner />;
-
-  const hourlyArr = weather.hourly.map((hour, index) => {
-    return index < 6 && <HourlyDisplay hour={hour} index={index} />;
+  const { hourly } = weather;
+  const hourlyLength = hourly.length;
+  const hourlyArr = hourly.map((hour, index) => {
+    return (
+      index < 6 && (
+        <HourlyDisplay
+          key={index}
+          hour={hour}
+          index={index}
+          hourlyLength={hourlyLength}
+        />
+      )
+    );
   });
 
   return (

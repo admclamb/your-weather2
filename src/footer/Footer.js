@@ -1,10 +1,10 @@
 import React from "react";
 import BreadCrumbFooter from "./BreadCrumbFooter";
 import "./Footer.css";
-const Footer = ({ weather }) => {
+const Footer = ({ location }) => {
   return (
     <footer className="footer">
-      <BreadCrumbFooter weather={weather} />
+      <BreadCrumbFooter location={location} />
       <section className="footer-main">
         <div className="container pt-5 pb-5 d-flex justify-content-start">
           <div className="credit me-4">
@@ -16,9 +16,9 @@ const Footer = ({ weather }) => {
               </a>{" "}
               for all weather data. Credit also goes to{" "}
               <a href="https://newsapi.org/" className="links-tag">
-                NewsApi
+                NewsApi.
               </a>{" "}
-              for providing news to demonstrate a great landing page.
+              This is a personal project.
             </p>
           </div>
           <div className="links">
