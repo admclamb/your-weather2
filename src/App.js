@@ -33,7 +33,7 @@ function App() {
     return () => {
       abortController.abort();
     };
-  }, [coords]);
+  }, [coords, unitOfMeasure]);
 
   useEffect(() => {
     const abortController = new AbortController();
