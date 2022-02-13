@@ -3,6 +3,7 @@ import { objHasProperties } from "../utils/objHasProperties";
 import Spinner from "../utils/Spinner";
 const MainNews = ({ news }) => {
   if (!objHasProperties(news)) return <Spinner />;
+  if (!objHasProperties(news.articles)) return <Spinner />;
   const { title, description, author, url, urlToImage } = news.articles[0];
   // const changeNews = () => {
   //   if (currentIndex === news.articles.length - 1) {
@@ -13,7 +14,6 @@ const MainNews = ({ news }) => {
   // };
 
   // window.setInterval(changeNews, 10000);
-  if (!objHasProperties(news)) return null;
   return (
     <div
       className="jumbotron-fluid d-flex flex-column justify-content-center p-4 mb-2"
