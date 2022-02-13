@@ -72,6 +72,7 @@ function App() {
           setCoords={setCoords}
           location={location}
           news={news}
+          unitOfMeasure={unitOfMeasure}
           setUnitOfMeasure={setUnitOfMeasure}
           airPollution={airPollution}
           coords={coords}

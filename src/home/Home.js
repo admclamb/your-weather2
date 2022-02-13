@@ -27,7 +27,8 @@ const Home = ({ weather, news, location, airPollution, coords }) => {
         </article>
         <article className="col col-12 col-md-4">
           <AirQuality airPollution={airPollution} />
-          <NewsWidgetSM news={news} />
+          <NewsWidgetSM news={news} index={4} />
+          <NewsWidgetSM news={news} index={5} />
         </article>
       </section>
     </main>

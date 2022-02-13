@@ -4,15 +4,16 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Daily from "../daily/Daily";
 import Today from "../today/Today";
-import Hourly from "../hourly/Hourly";
 import Home from "../home/Home";
 import Settings from "../settings/Settigs";
+import HourlyPage from "../hourly/HourlyPage";
 
 const Layout = ({
   weather,
   setCoords,
   location,
   news,
+  unitOfMeasure,
   setUnitOfMeasure,
   airPollution,
   coords,
@@ -28,7 +29,9 @@ const Layout = ({
         <Route path="/today" element={<Today weather={weather} />} />
         <Route
           path="/hourly"
-          element={<Hourly weather={weather} location={location} />}
+          element={
+            <HourlyPage weather={weather} location={location} news={news} />
+          }
         />
         <Route
           path="/"
@@ -45,7 +48,11 @@ const Layout = ({
         <Route
           path="/settings"
           element={
-            <Settings weather={weather} setUnitOfMeasure={setUnitOfMeasure} />
+            <Settings
+              weather={weather}
+              unitOfMeasure={unitOfMeasure}
+              setUnitOfMeasure={setUnitOfMeasure}
+            />
           }
         />
       </Routes>

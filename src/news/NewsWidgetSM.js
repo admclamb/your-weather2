@@ -2,9 +2,9 @@ import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
 import Spinner from "../utils/Spinner";
 
-const NewsWidgetSM = ({ news, choice }) => {
+const NewsWidgetSM = ({ news, index }) => {
   if (!objHasProperties(news)) return <Spinner />;
-  const { author, title, url, urlToImage } = news.articles[choice ? choice : 4];
+  const { author, title, url, urlToImage } = news.articles[index ? index : 4];
   return (
     <div className="border p-3 mt-3 bg-light">
       <h5 className="mb-4">{title}</h5>
