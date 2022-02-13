@@ -7,7 +7,6 @@ import NewsWidgetSM from "../news/NewsWidgetSM";
 const HourlyPage = ({ weather, location, news }) => {
   if (!objHasProperties(weather)) return null;
   const { hourly } = weather;
-  console.log(hourly);
   const hourlyArr = hourly.map((hour, index) => {
     return <HourCard hourWeather={hour} index={index} key={index} />;
   });

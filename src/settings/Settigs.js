@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 const Settings = ({ unitOfMeasure, setUnitOfMeasure }) => {
-  console.log(unitOfMeasure);
   const navigate = useNavigate();
   if (!unitOfMeasure) return <h1 className="text-center">Error :(</h1>;
 

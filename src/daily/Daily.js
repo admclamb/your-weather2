@@ -7,7 +7,6 @@ import NewsWidgetSM from "../news/NewsWidgetSM";
 const Daily = ({ weather, location, news }) => {
   if (!objHasProperties(weather)) return null;
   const { daily } = weather;
-  console.log(daily);
   const dailyArr = daily.map((day, index) => {
     return <DayCard dayWeather={day} index={index} key={index} />;
   });

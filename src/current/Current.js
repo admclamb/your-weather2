@@ -6,7 +6,7 @@ import Spinner from "../utils/Spinner";
 
 const Current = ({ weather, location }) => {
   if (!objHasProperties(weather)) return <Spinner />;
-  const { humidity, wind_gust, dt, temp, feels_like } = weather.current;
+  const { humidity, wind_speed, dt, temp, feels_like } = weather.current;
   const { main, icon } = weather.current.weather[0];
   const time = unixToHHMM(dt) + addMeridiem(dt);
   const header = location[0]
@@ -43,7 +43,7 @@ const Current = ({ weather, location }) => {
           </div>
           <div className="d-flex justify-content-between pt-2">
             <h6>Wind</h6>
-            <p>{wind_gust}</p>
+            <p>{wind_speed} MPH</p>
           </div>
         </div>
       </div>

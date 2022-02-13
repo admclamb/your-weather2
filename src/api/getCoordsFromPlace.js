@@ -5,7 +5,6 @@ export async function getCoordsFromPlace(city) {
     `http://api.openweathermap.org/geo/1.0/direct?q=${city},&limit=${limit}&appid=${KEY}`
   );
   const responseFromApi = await response.json();
-  console.log("responseFromApi", responseFromApi);
   const { lat, lon } = await responseFromApi[0];
   return { lat, lon };
 }
