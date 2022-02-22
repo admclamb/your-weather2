@@ -5,15 +5,6 @@ const MainNews = ({ news }) => {
   if (!objHasProperties(news)) return <Spinner />;
   if (!objHasProperties(news.articles)) return null;
   const { title, description, author, url, urlToImage } = news.articles[0];
-  // const changeNews = () => {
-  //   if (currentIndex === news.articles.length - 1) {
-  //     setCurrentIndex(0);
-  //   } else {
-  //     setCurrentIndex((prevIndex) => prevIndex + 1);
-  //   }
-  // };
-
-  // window.setInterval(changeNews, 10000);
   return (
     <div
       className="jumbotron-fluid d-flex flex-column justify-content-center p-4 mb-2"

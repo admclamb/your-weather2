@@ -15,11 +15,14 @@ const HourlyPage = ({ weather, location, news }) => {
       <Current weather={weather} location={location} />
       <div className="row mb-3">
         <div className="col col-12 col-md-8">{hourlyArr}</div>
-        <div className="col col-12 col-md-4">
-          <NewsWidgetSM index={6} news={news} />
-          <NewsWidgetSM index={7} news={news} />
-          <NewsWidgetSM index={8} news={news} />
-        </div>
+        {news && (
+          <div className="col col-12 col-md-4">
+            <NewsWidgetSM index={6} news={news} />
+            <NewsWidgetSM index={7} news={news} />
+            <NewsWidgetSM index={8} news={news} />
+          </div>
+        )}
+        >
       </div>
     </div>
   );

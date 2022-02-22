@@ -12,9 +12,7 @@ const Home = ({ weather, news, location, airPollution, coords }) => {
   return (
     <main className="container mb-4 home">
       <section className="row">
-        <article className="col-12">
-          <MainNews news={news} />
-        </article>
+        <article className="col-12">{news && <MainNews news={news} />}</article>
       </section>
       <section className="row">
         <article className="col col-12 col-md-8">
