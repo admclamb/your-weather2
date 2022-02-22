@@ -2,7 +2,7 @@ import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
 
 const AirQuality = ({ airPollution }) => {
-  if (!airPollution.hasOwnProperty("status")) return null;
+  if (!objHasProperties(airPollution)) return null;
   const { main, components } = airPollution.list[0];
   const { co, no2, o3, so2 } = components;
   const { aqi } = main;
