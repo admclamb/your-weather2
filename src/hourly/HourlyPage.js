@@ -22,7 +22,6 @@ const HourlyPage = ({ weather, location, news }) => {
             <NewsWidgetSM index={8} news={news} />
           </div>
         )}
-        >
       </div>
     </div>
   );
