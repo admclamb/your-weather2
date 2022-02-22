@@ -3,5 +3,8 @@ export async function getNews() {
     `https://newsapi.org/v2/everything?q=weather&apiKey=${process.env.REACT_APP_NEWS_KEY}`
   );
   const newsFromAPI = await response.json();
-  return newsFromAPI;
+  if (newsFromAPI) {
+    return newsFromAPI;
+  }
+  return {};
 }
