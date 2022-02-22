@@ -6,6 +6,9 @@ export async function getLocation({ lat, lon }) {
       `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=${limit}&appid=${KEY}`
     );
     const locationFromAPI = await response.json();
-    return { status: 200, ...locationFromAPI };
+    if (locationFromAPI) {
+      return { status: 200, ...locationFromAPI };
+    }
   }
+  return {};
 }

@@ -66,7 +66,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {(weather.hasOwnProperty("status") && location.length > 0 && (
+      {(objHasProperties(weather) && location && (
         <Layout
           weather={weather}
           setCoords={setCoords}

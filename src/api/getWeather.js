@@ -6,6 +6,8 @@ export const getWeather = async (coords, unitOfMeasure) => {
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${unitOfMeasure}&appid=${KEY}`
     );
     const weatherFromAPI = await response.json();
-    return { status: 200, ...weatherFromAPI };
+    if (weatherFromAPI) {
+      return { status: 200, ...weatherFromAPI };
+    }
   }
 };

@@ -8,4 +8,5 @@ export async function getAirPollution(coords) {
     const pollutionFromAPI = await response.json();
     return { status: 200, ...pollutionFromAPI };
   }
+  return {};
 }
