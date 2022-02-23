@@ -3,7 +3,7 @@ import { objHasProperties } from "../utils/objHasProperties";
 import Spinner from "../utils/Spinner";
 const MainNews = ({ news }) => {
   if (!objHasProperties(news)) return <Spinner />;
-  if (!objHasProperties(news.articles)) return null;
+  if (!news.hasOwnProperty("status") && !news.status("ok")) return null;
   const { title, description, author, url, urlToImage } = news.articles[0];
   return (
     <div
