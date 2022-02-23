@@ -3,8 +3,7 @@ import { objHasProperties } from "../utils/objHasProperties";
 import Spinner from "../utils/Spinner";
 
 const NewsWidgetSM = ({ news, index }) => {
-  if (!objHasProperties(news)) return <Spinner />;
-  if (news.hasOwnProperty("articles")) {
+  if (objHasProperties(news)) {
     const { author, title, url, urlToImage } = news.articles[index ? index : 1];
     return (
       <div className="border p-3 mt-3 bg-light">
@@ -18,6 +17,8 @@ const NewsWidgetSM = ({ news, index }) => {
         </div>
       </div>
     );
+  } else {
+    return null;
   }
 };
 
