@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Daily from "../daily/Daily";
-import Today from "../today/Today";
 import Home from "../home/Home";
 import Settings from "../settings/Settigs";
 import HourlyPage from "../hourly/HourlyPage";
@@ -26,7 +25,6 @@ const Layout = ({
           path="/daily"
           element={<Daily weather={weather} location={location} news={news} />}
         />
-        <Route path="/today" element={<Today weather={weather} />} />
         <Route
           path="/hourly"
           element={

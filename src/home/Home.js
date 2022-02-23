@@ -4,7 +4,6 @@ import NationalAlerts from "../nationalAlerts/NationalAlerts";
 import Current from "../current/Current";
 import Forecast from "../forecast/Forecast";
 import AirQuality from "../airPollution/AirQuality";
-import Today from "../today/Today";
 import Map from "../map/Map";
 import NewsWidgetSM from "../news/NewsWidgetSM";
 import Hourly from "../hourly/Hourly";
@@ -21,7 +20,6 @@ const Home = ({ weather, news, location, airPollution, coords }) => {
           {weather.alerts && <NationalAlerts alerts={weather.alerts} />}
           <Forecast weather={weather} />
           <Current weather={weather} location={location} />
-          <Today weather={weather} />
           <Hourly weather={weather} />
           <Map coords={coords} />
         </article>

@@ -64,7 +64,6 @@ function App() {
       abortController.abort();
     };
   }, []);
-  console.log(news);
   return (
     <div className="App">
       {(objHasProperties(weather) && (
