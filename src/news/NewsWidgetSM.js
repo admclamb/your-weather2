@@ -1,6 +1,5 @@
 import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
-import Spinner from "../utils/Spinner";
 
 const NewsWidgetSM = ({ news, index }) => {
   if (objHasProperties(news)) {

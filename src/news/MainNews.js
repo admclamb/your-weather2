@@ -1,6 +1,5 @@
 import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
-import Spinner from "../utils/Spinner";
 const MainNews = ({ news }) => {
   if (objHasProperties(news)) {
     const { title, description, author, url, urlToImage } = news.articles[0];
