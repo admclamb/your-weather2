@@ -9,16 +9,21 @@ const Navbar = ({ setCoords, location }) => {
       <nav className="navbar navbar-dark bg-dark">
         <div className="container">
           <div className="d-flex align-items-center">
-            <a className="navbar-brand">Weatherly</a>
+            <Link to="/" className="navbar-brand">
+              Weatherly
+            </Link>
             <div className="text-light d-flex align-items">
               <p className="me-2">
                 {location && location[0] && location[0].name},{" "}
-                {location && location[0].state}
+                {location && location[0] && location[0].state}
               </p>
             </div>
           </div>
 
           <SearchForm setCoords={setCoords} />
+          <Link to="/settings">
+            <i className="fas fa-sliders-h fa-lg text-light mt-2 pt-1"></i>
+          </Link>
         </div>
       </nav>
       <div className="container">

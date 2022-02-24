@@ -6,6 +6,7 @@ import Daily from "../daily/Daily";
 import Home from "../home/Home";
 import Settings from "../settings/Settigs";
 import HourlyPage from "../hourly/HourlyPage";
+import NoWeather from "../NoWeather";
 
 const Layout = ({
   weather,

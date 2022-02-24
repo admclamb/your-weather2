@@ -10,7 +10,7 @@ const BreadCrumbFooter = ({ location }) => {
       </nav>
     );
   }
-  const { country, state, name } = location;
+  const { country, state, name } = location[0];
   return (
     <nav aria-label="breadcrumb" className="breadcrumb-footer p-3 text-dark">
       <div className="container">

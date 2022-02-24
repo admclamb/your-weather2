@@ -77,7 +77,7 @@ function App() {
           airPollution={airPollution}
           coords={coords}
         />
-      )) || <NoWeather />}
+      )) || <NoWeather setCoords={setCoords} />}
     </div>
   );
 }

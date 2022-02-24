@@ -18,7 +18,7 @@ const SearchForm = ({ setCoords }) => {
   };
 
   return (
-    <form className="d-flex input-group w-auto searchbar">
+    <form className="d-flex input-group searchbar">
       <button
         className="input-group-text border-0 search-icon"
         id="search-addon"
@@ -36,9 +36,6 @@ const SearchForm = ({ setCoords }) => {
         value={city}
         onChange={handleChange}
       />
-      <Link to="/settings">
-        <i className="fas fa-sliders-h fa-lg text-light mt-2 pt-1"></i>
-      </Link>
     </form>
   );
 };
