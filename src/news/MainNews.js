@@ -1,8 +1,8 @@
 import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
 const MainNews = ({ news }) => {
-  if (objHasProperties(news)) {
-    const { title, description, source_id, link, image_url } = news.results[0];
+  if (objHasProperties(news) && news.status === "success") {
+    const { title, description, creator, link, image_url } = news.results[0];
     return (
       <div
         className="jumbotron-fluid d-flex flex-column justify-content-center p-4 mb-2"
@@ -19,7 +19,9 @@ const MainNews = ({ news }) => {
           {description}
         </p>
         <div className="d-flex mt-auto justify-content-between">
-          <p className="text-light">Source Id: {source_id}</p>
+          {creator !== null && (
+            <p className="text-light">Creator: {creator[0]}</p>
+          )}
           <a
             href={link}
             className="text-light"

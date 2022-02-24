@@ -12,7 +12,8 @@ const Navbar = ({ setCoords, location }) => {
             <a className="navbar-brand">Weatherly</a>
             <div className="text-light d-flex align-items">
               <p className="me-2">
-                {location && location[0].name}, {location && location[0].state}
+                {location && location[0] && location[0].name},{" "}
+                {location && location[0].state}
               </p>
             </div>
           </div>

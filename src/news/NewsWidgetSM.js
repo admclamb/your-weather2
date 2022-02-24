@@ -2,23 +2,27 @@ import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
 
 const NewsWidgetSM = ({ news, index }) => {
-  if (objHasProperties(news)) {
-    const { author, title, url, urlToImage } = news.articles[index ? index : 1];
-    return (
-      <div className="border p-3 mt-3 bg-light">
-        <h5 className="mb-4">{title}</h5>
-        <img src={urlToImage} alt={title} width="100%" />
-        <div className="d-flex flex-column mt-2 align-items-end">
-          <p className="text-muted">By: {author}</p>
-          <a href={url} target="_blank" rel="noreferrer">
-            Click here for more &rarr;
-          </a>
+  if (objHasProperties(news) && news.status === "success") {
+    if (news.results) {
+      console.log(news.results);
+      const { creator, title, link, image_url } = news.results[index];
+      return (
+        <div className="border p-3 mt-3 bg-light">
+          <h5 className="mb-4">{title}</h5>
+          {image_url && <img src={image_url} alt={title} width="100%" />}
+          <div className="d-flex flex-column mt-2 align-items-end">
+            {creator !== null && (
+              <p className="text-muted">Source: {creator[0]}</p>
+            )}
+            <a href={link} target="_blank" rel="noreferrer">
+              Click here for more &rarr;
+            </a>
+          </div>
         </div>
-      </div>
-    );
-  } else {
-    return null;
+      );
+    }
   }
+  return null;
 };
 
 export default NewsWidgetSM;
