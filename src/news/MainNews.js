@@ -2,12 +2,12 @@ import React from "react";
 import { objHasProperties } from "../utils/objHasProperties";
 const MainNews = ({ news }) => {
   if (objHasProperties(news)) {
-    const { title, description, author, url, urlToImage } = news.articles[0];
+    const { title, description, source_id, link, image_url } = news.results[0];
     return (
       <div
         className="jumbotron-fluid d-flex flex-column justify-content-center p-4 mb-2"
         style={{
-          background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${urlToImage})`,
+          background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${image_url})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",
           backgroundSize: "cover",
@@ -19,9 +19,9 @@ const MainNews = ({ news }) => {
           {description}
         </p>
         <div className="d-flex mt-auto justify-content-between">
-          <p className="text-light">By: {author}</p>
+          <p className="text-light">Source Id: {source_id}</p>
           <a
-            href={url}
+            href={link}
             className="text-light"
             target="_blank"
             rel="noopener noreferrer"
