@@ -27,14 +27,14 @@ const HourCard = ({ hourWeather, index }) => {
             src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
             alt={main}
           />
-          <p className="ms-5">{description}</p>
+          <p className="ms-5 d-none d-lg-flex">{description}</p>
         </div>
         <div className="d-flex align-items-center">
-          <div className="percipitation text-muted d-flex align-items-center me-3">
+          <div className="percipitation text-muted d-none d-sm-flex align-items-center me-3">
             <i className="fas fa-tint me-2"></i>
             <p>{pop}%</p>
           </div>
-          <div className="wind text-muted">
+          <div className="wind text-muted d-none d-lg-flex">
             <i className="fas fa-wind me-2"></i>
             {wind_speed} MPH
           </div>

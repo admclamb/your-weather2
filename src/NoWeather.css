@@ -1,0 +1,12 @@
+.no-weather-header {
+  /* background-image: url(../public/images/martin-adams-YA-DFlSzXBE-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  height: 70vh;
+}
+
+.no-weather-search {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -21,9 +21,9 @@ const DayCard = ({ dayWeather, index }) => {
       <div className="d-flex justify-content-between align-items-center p-2 ">
         <div className="d-flex align-items-center">
           <p className="me-4">{day}</p>
-          <div className="d-flex align-items-center me-5">
+          <div className="d-flex  align-items-center me-2 me-sm-3">
             <h6 className="mt-1">{max}</h6>
-            <p className="text-muted">/ {min}</p>
+            <p className="text-muted ">/ {min}</p>
           </div>
           <img
             src={`http://openweathermap.org/img/wn/${icon}@2x.png`}

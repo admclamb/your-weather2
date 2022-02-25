@@ -12,7 +12,7 @@ const Navbar = ({ setCoords, location }) => {
             <Link to="/" className="navbar-brand">
               Weatherly
             </Link>
-            <div className="text-light d-flex align-items">
+            <div className="text-light d-none d-sm-flex align-items">
               <p className="me-2">
                 {location && location[0] && location[0].name},{" "}
                 {location && location[0] && location[0].state}
@@ -36,7 +36,7 @@ const Navbar = ({ setCoords, location }) => {
           </Link>
 
           <Link to="/daily" className="me-3 p-1">
-            <h5>5 Days</h5>
+            <h5>8 Days</h5>
           </Link>
         </nav>
       </div>
