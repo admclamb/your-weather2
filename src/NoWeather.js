@@ -12,7 +12,8 @@ const NoWeather = ({ setCoords }) => {
           <nav className="pt-2 pb-2">
             <a className="navbar-brand">Weatherly</a>
           </nav>
-          <section className="hero d-flex justify-content-center no-weather-search">
+          <section className="hero d-flex flex-column align-items-center no-weather-search">
+            <h4 className="mb-3">Search Your City</h4>
             <SearchForm setCoords={setCoords} />
           </section>
         </section>
