@@ -19,7 +19,7 @@ const SearchForm = ({ setCoords }) => {
   return (
     <form className="d-flex input-group searchbar">
       <button
-        className="input-group-text border-0 search-icon"
+        className="input-group-text border-0 search-icon bg-dark text-light"
         id="search-addon"
         onClick={handleSubmit}
         type="submit"
@@ -29,7 +29,7 @@ const SearchForm = ({ setCoords }) => {
       <input
         type="search"
         className="form-control searchbar-search me-3 rounded-right"
-        placeholder="Search"
+        placeholder="Search City"
         aria-label="Search"
         aria-describedby="search-addon"
         value={city}
