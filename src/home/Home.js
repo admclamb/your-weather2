@@ -7,6 +7,7 @@ import AirQuality from "../airPollution/AirQuality";
 import NewsWidgetSM from "../news/NewsWidgetSM";
 import Hourly from "../hourly/Hourly";
 const Home = ({ weather, news, location, airPollution, coords }) => {
+  console.log(weather);
   return (
     <main className="container mb-4 home">
       <section className="row">

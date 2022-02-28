@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm";
 import "./Navbar.css";
+import HamburgerMenu from "../utils/HamburgerMenu";
 
 const Navbar = ({ setCoords, location }) => {
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark">
-        <div className="container">
-          <div className="d-flex align-items-center">
-            <Link to="/" className="navbar-brand">
+      <nav className="navbar navbar-light bg-dark">
+        <div className="container d-flex">
+          <div className="navbar-brand d-flex align-items-center">
+            <Link to="/" className="navbar-brand text-light">
               Weatherly
             </Link>
             <div className="text-light d-none d-sm-flex align-items">
@@ -19,11 +20,18 @@ const Navbar = ({ setCoords, location }) => {
               </p>
             </div>
           </div>
+          <div className=" d-flex align-items-center">
+            <div className="d-flex d-sm-none">
+              <HamburgerMenu />
+            </div>
 
-          <SearchForm setCoords={setCoords} />
-          <Link to="/settings">
-            <i className="fas fa-sliders-h fa-lg text-light mt-2 pt-1"></i>
-          </Link>
+            <div className="d-none d-sm-flex">
+              <SearchForm setCoords={setCoords} />
+              <Link to="/settings ms-4">
+                <i className="fas fa-sliders-h fa-lg text-light mt-2 pt-1"></i>
+              </Link>
+            </div>
+          </div>
         </div>
       </nav>
       <div className="container">
