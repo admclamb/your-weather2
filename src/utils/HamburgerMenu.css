@@ -1,28 +1,5 @@
-.hamburger-menu {
-  width: 27px;
-  height: 27px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .burger {
-  content: " ";
   height: 4px;
+  width: 100%;
   background-color: #fff;
-}
-
-.burger-1 {
-  animation: animateTopBurger 0.4s timing-function delay iteration-count
-    direction fill-mode;
-}
-
-@keyframes animateTopBurger {
-  from {
-    top: 0;
-  }
-
-  to {
-    top: 50%;
-  }
 }

@@ -1,11 +1,11 @@
 import "./HamburgerMenu.css";
 
 const HamburgerMenu = () => {
+  const toggleBurgerMenu = () => {};
+
   return (
-    <div className="hamburger-menu">
-      <div className="burger burger-1"></div>
-      <div className="burger burger-2"></div>
-      <div className="burger burger-3"></div>
+    <div className="hamburger-menu" onClick={toggleBurgerMenu}>
+      <div className="burger"></div>
     </div>
   );
 };
