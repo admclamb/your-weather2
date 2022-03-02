@@ -18,6 +18,7 @@ const NavbarUpdated = ({ weather, location, setCoords }) => {
               <p className="d-none d-sm-block">
                 {location[0].name},{" "}
                 {weather && weather.current.temp && weather.current.temp}
+                &#176;
               </p>
             )}
           </div>

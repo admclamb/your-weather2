@@ -20,7 +20,7 @@ const Current = ({ weather, location }) => {
           <div>
             <p className="text-muted">{time}</p>
           </div>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center ms-auto me-auto">
             <img
               src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
               alt={main}
@@ -32,7 +32,10 @@ const Current = ({ weather, location }) => {
             <span></span>
           </p>
         </div>
-        <div style={{ width: "50%" }} className="mt-auto mb-auto">
+        <div
+          style={{ width: "50%" }}
+          className="mt-auto mb-auto mt-4 d-none d-md-block"
+        >
           <div className="d-flex justify-content-between border-bottom pb-2">
             <h6>Feels Like</h6>
             <p>{feels_like}</p>

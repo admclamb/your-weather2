@@ -6,7 +6,7 @@ import Forecast from "../forecast/Forecast";
 import AirQuality from "../airPollution/AirQuality";
 import NewsWidgetSM from "../news/NewsWidgetSM";
 import Hourly from "../hourly/Hourly";
-const Home = ({ weather, news, location, airPollution, coords }) => {
+const Home = ({ weather, news, location, airPollution }) => {
   return (
     <main className="container mb-4 home">
       <section className="row">
