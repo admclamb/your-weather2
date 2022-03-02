@@ -1,9 +1,17 @@
 .no-weather-header {
-  /* background-image: url(../public/images/martin-adams-YA-DFlSzXBE-unsplash.jpg);
+  background: #ff4e00;
+  background-image: url(https://source.unsplash.com/random/1400x900/?weather);
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.411),
+      rgba(0, 0, 0, 0.473)
+    ),
+    url(https://source.unsplash.com/random/?weather);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; */
-  height: 70vh;
+  background-position: center;
+  height: 40vh;
+  border-bottom: #ff4e00 10px;
 }
 
 .no-weather-search {

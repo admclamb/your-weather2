@@ -2,54 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm";
 import "./Navbar.css";
-import HamburgerMenu from "../utils/HamburgerMenu";
-
-const Navbar = ({ setCoords, location }) => {
+const NavbarUpdated = ({ weather, location, setCoords }) => {
+  console.log(weather, location);
   return (
-    <>
-      <nav className="navbar navbar-light bg-dark">
-        <div className="container d-flex">
-          <div className="navbar-brand d-flex align-items-center">
-            <Link to="/" className="navbar-brand text-light">
-              Weatherly
+    <nav className="bg-dark text-light">
+      <div className="container p-3 d-flex justify-content-between align-items-center">
+        <section className="left d-flex align-items-center">
+          <div className="logo-brand me-4">
+            <Link to="/" className="logo-brand text-light">
+              <h1 className="navbar-logo">Weatherly</h1>
             </Link>
-            <div className="text-light d-none d-sm-flex align-items">
-              <p className="me-2">
-                {location && location[0] && location[0].name},{" "}
-                {location && location[0] && location[0].state}
+          </div>
+          <div className="location-weather">
+            {location && location[0] && (
+              <p className="d-none d-sm-block">
+                {location[0].name},{" "}
+                {weather && weather.current.temp && weather.current.temp}
               </p>
-            </div>
+            )}
           </div>
-          <div className=" d-flex align-items-center">
-            <div className="d-flex d-sm-none">
-              <HamburgerMenu />
-            </div>
-
-            <div className="d-none d-sm-flex">
-              <SearchForm setCoords={setCoords} />
-              <Link to="/settings ms-4">
-                <i className="fas fa-sliders-h fa-lg text-light mt-2 pt-1"></i>
-              </Link>
-            </div>
+        </section>
+        <section className="right">
+          <div className="navbar-collapsed d-lg-none">
+            <button className="hamburger-menu">
+              <i className="fa-solid fa-bars fa-2x text-light"></i>
+            </button>
           </div>
-        </div>
-      </nav>
-      <div className="container">
-        <nav className="d-flex pt-3 main-nav">
-          <Link to="/" className="me-3 p-1">
-            <h5>Home</h5>
-          </Link>
-          <Link to="/hourly" className="me-3 p-1">
-            <h5>Hourly</h5>
-          </Link>
-
-          <Link to="/daily" className="me-3 p-1">
-            <h5>8 Days</h5>
-          </Link>
-        </nav>
+          <div className="navbar-uncollapsed d-none d-lg-flex align-items-center">
+            <SearchForm setCoords={setCoords} />
+            <Link to="/settings" className="">
+              <i className="fa-solid fa-sliders text-light"></i>
+            </Link>
+          </div>
+        </section>
       </div>
-    </>
+    </nav>
   );
 };
 
-export default Navbar;
+export default NavbarUpdated;

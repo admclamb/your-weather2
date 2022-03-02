@@ -6,7 +6,7 @@ const Footer = ({ location }) => {
     <footer className="footer">
       <BreadCrumbFooter location={location} />
       <section className="footer-main">
-        <div className="container pt-5 pb-5 d-flex justify-content-start">
+        <div className="container pt-5 pb-5 d-flex justify-content-between justify-content-md-start">
           <div className="credit me-4">
             <h6>THIS IS A MOCK APP</h6>
             <p>

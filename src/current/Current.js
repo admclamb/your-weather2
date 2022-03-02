@@ -25,7 +25,7 @@ const Current = ({ weather, location }) => {
               src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
               alt={main}
             />
-            <h3 className="display-3">{temp.toFixed(0)}</h3>
+            <h3 className="display-3">{temp.toFixed(0)}&#176;</h3>
           </div>
           <h6>{main}</h6>
           <p>

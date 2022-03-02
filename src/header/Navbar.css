@@ -1,19 +1,4 @@
-.search-icon {
-  background-color: #fff;
-  border-top-right-radius: 0%;
-  border-bottom-right-radius: 0%;
-}
-
-.searchbar-search {
+.hamburger-menu {
+  background-color: inherit;
   border: none;
-}
-
-.main-nav a:hover {
-  text-decoration: underline #ff4e00;
-  text-underline-offset: 10px;
-}
-
-.main-nav > .active > a {
-  text-decoration: underline #ff4e00;
-  text-underline-offset: 10px;
 }

@@ -15,7 +15,6 @@ const SearchForm = ({ setCoords }) => {
       setCoords({ lat, lon });
     }
   };
-  console.log(city);
   return (
     <form className="d-flex input-group searchbar">
       <button

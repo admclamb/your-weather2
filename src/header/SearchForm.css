@@ -3,17 +3,11 @@
 }
 
 .searchbar {
-  width: 100%;
+  width: 75%;
 }
 
 @media all and (min-width: 991px) {
   .searchbar {
-    width: 75%;
-  }
-}
-
-@media all and (min-width: 1607px) {
-  .searchbar {
-    width: 50%;
+    width: 100%;
   }
 }

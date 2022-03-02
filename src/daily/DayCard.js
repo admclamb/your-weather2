@@ -22,8 +22,8 @@ const DayCard = ({ dayWeather, index }) => {
         <div className="d-flex align-items-center">
           <p className="me-4">{day}</p>
           <div className="d-flex  align-items-center me-2 me-sm-3">
-            <h6 className="mt-1">{max}</h6>
-            <p className="text-muted ">/ {min}</p>
+            <p className="mt-1">{max}&#176;</p>
+            <h6 className="text-muted ">/ {min}&#176;</h6>
           </div>
           <img
             src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
@@ -32,9 +32,9 @@ const DayCard = ({ dayWeather, index }) => {
           <p className="ms-5 d-none d-lg-block">{description}</p>
         </div>
         <div className="d-flex align-items-center">
-          <div className="percipitation text-muted d-flex align-items-center me-3 d-none d-sm-block">
+          <div className="text-muted d-flex align-items-center me-3 d-none d-sm-block">
             <i className="fas fa-tint me-2 "></i>
-            <p>{pop * 100}%</p>
+            <p>{(pop * 100).toFixed(0)}%</p>
           </div>
           <div className="wind text-muted d-none d-xl-block">
             <i className="fas fa-wind me-2"></i>
