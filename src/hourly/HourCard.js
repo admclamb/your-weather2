@@ -51,10 +51,7 @@ const HourCard = ({ hourWeather, index }) => {
         </div>
       </div>
 
-      <div
-        className={index === 0 ? "collapse.show" : "collapse"}
-        id={"collapseDetails" + index}
-      >
+      <div className={"collapse"} id={"collapseDetails" + index}>
         <div className="">
           <p>{description}</p>
           <div className="d-flex align-items-center">

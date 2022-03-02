@@ -18,7 +18,7 @@ const SearchForm = ({ setCoords }) => {
   return (
     <form className="d-flex input-group searchbar">
       <button
-        className="input-group-text border-0 search-icon bg-dark text-light"
+        className="input-group-text border-0 search-icon bg-light text-dark"
         id="search-addon"
         onClick={handleSubmit}
         type="submit"

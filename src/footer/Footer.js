@@ -16,7 +16,7 @@ const Footer = ({ location }) => {
               </a>{" "}
               for all weather data. Credit also goes to{" "}
               <a href="https://newsapi.org/" className="links-tag">
-                NewsApi.
+                NewsData.io
               </a>{" "}
               This is a personal project.
             </p>
@@ -25,13 +25,27 @@ const Footer = ({ location }) => {
             <h6>Links</h6>
             <ul>
               <li className="mb-2">
-                <a href="#">OpenWeatherApi</a>
+                <a
+                  href="https://openweathermap.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  OpenWeatherApi
+                </a>
               </li>
               <li className="mb-2">
-                <a href="#">NewsApi</a>
+                <a href="https://newsdata.io/" target="_blank" rel="noreferrer">
+                  NewsData.io
+                </a>
               </li>
               <li className="mb-2">
-                <a href="#">My Github</a>
+                <a
+                  href="https://github.com/admclamb"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  My Github
+                </a>
               </li>
             </ul>
           </div>

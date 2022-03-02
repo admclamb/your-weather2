@@ -53,7 +53,7 @@ const Current = ({ weather, location }) => {
 
       <div className="d-flex">
         <Link to="/" className="ms-auto">
-          More info &rarr;
+          More info coming in next update...
         </Link>
       </div>
     </div>
