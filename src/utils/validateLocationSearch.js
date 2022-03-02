@@ -3,8 +3,7 @@ export function validateLocationSearch(location) {
   // if not in string return -1
   if (!location) return;
   const commaPosition = location.search(",");
-  if (commaPosition !== -1) {
-  } else {
+  if (commaPosition === -1) {
     const spacePosition = location.search(" ");
     let locationCopy = location;
     const locationWithComma =
