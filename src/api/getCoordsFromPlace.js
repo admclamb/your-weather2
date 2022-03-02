@@ -1,4 +1,8 @@
+import { validateLocationSearch } from "../utils/validateLocationSearch";
+
 export async function getCoordsFromPlace(city) {
+  console.log("here");
+  validateLocationSearch(city);
   try {
     const KEY = process.env.REACT_APP_OPEN_API_KEY;
     const limit = 5;
