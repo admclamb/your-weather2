@@ -14,7 +14,7 @@
  <img src="public/images/weatherlyHomePage.png" alt="Weatherly Screenshot">
  <img src="public/images/weatherlyNoWeather.png" alt="Weatherly Screenshot">
  <img src="public/images/weatherly8Day.png" alt="Weatherly Screenshot">
- <div align="center">
+ <div float="left">
   <img src="public/images/weatherlyHomePageMobile.png" alt="Weatherly Screenshot">
   <img src="public/images/weatherlyNoWeatherMobile.png" alt="Weatherly Screenshot">
   <img src="public/images/weatherly8DayMobile.png" alt="Weatherly Screenshot">
