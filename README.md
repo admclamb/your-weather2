@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Weatherly
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- An application that uses OpenWeather API, Geolocation API, and a News API to get weather, news data for your location, and display the information in a professional manner.
 
-## Available Scripts
+- This application has a Modern, Responsive design that handles API requests and displays the information with React using React Hooks, React State, and Vanilla JavaScript.
 
-In the project directory, you can run:
+- The Technologies used in the application are BootStrap5, CSS, JavaScript, React, React hooks, React State, and API Calls.
 
-### `npm start`
+- THIS APPLICATION IS CURRENTLY IN TESTING\*\*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div align="center">
+ <img src="images/weatherlyHomePage.png" alt="Weatherly Screenshot">
+ <img src="images/weatherlyNoWeather.png" alt="Weatherly Screenshot">
+ <img src="images/weatherly8Day.png" alt="Weatherly Screenshot">
+ <div align="center">
+  <img src="images/weatherlyHomePageMobile.png" alt="Weatherly Screenshot">
+  <img src="images/weatherlyNoWeatherMobile.png" alt="Weatherly Screenshot">
+  <img src="images/weatherly8DayMobile.png" alt="Weatherly Screenshot">
+ </div>
+</div>
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Fork and clone this repo / or download, and register api keys from openweather and newsData.io. use them in .env file and name accordingly to keys in the api folder.
 
-### `npm run build`
+## Deployed version
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[WeatherlyDeployment](https://obscure-reaches-21818.herokuapp.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Anthony Mclamb
 
-### `npm run eject`
+## Version History
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-1.0
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Initial Release
+- 0.2
+  - Various bug fixes and optimizations
+  - See commit change or commit history
+- 0.1
+  - Initial Release
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgments
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Credit to OpenWeather for weather data.
+- Credit to NewsData.IO for news updates.
