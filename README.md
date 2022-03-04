@@ -27,7 +27,7 @@
 
 ## Getting Started
 
-Fork and clone this repo / or download, and register api keys from openweather and newsData.io. use them in .env file and name accordingly to keys in the api folder.
+Fork and clone this repo / or download, and register api keys from [OpenWeather](https://openweathermap.org/api) and [NewsData.io](https://newsdata.io/). Then, use them in .env file and name accordingly to keys in the api folder.
 
 ## Deployed version
 
