@@ -11,9 +11,13 @@
 ## Screenshots
 
 <div align="center">
+ <p>Homepage</p>
  <img src="public/images/weatherlyHomePage.png" alt="Weatherly Screenshot">
+ <p>No Weather Selected</p>
  <img src="public/images/weatherlyNoWeather.png" alt="Weatherly Screenshot">
+ <p>8 Day forecast Page</p>
  <img src="public/images/weatherly8Day.png" alt="Weatherly Screenshot">
+ <p>Mobile Views</p>
  <div float="left">
   <img src="public/images/weatherlyHomePageMobile.png" alt="Weatherly Screenshot">
   <img src="public/images/weatherlyNoWeatherMobile.png" alt="Weatherly Screenshot">
