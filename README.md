@@ -18,11 +18,9 @@
  <p>8 Day forecast Page</p>
  <img src="public/images/weatherly8Day.png" alt="Weatherly Screenshot">
  <p>Mobile Views</p>
- <div float="left">
-  <img src="public/images/weatherlyHomePageMobile.png" alt="Weatherly Screenshot">
-  <img src="public/images/weatherlyNoWeatherMobile.png" alt="Weatherly Screenshot">
-  <img src="public/images/weatherly8DayMobile.png" alt="Weatherly Screenshot">
- </div>
+ <img src="public/images/weatherlyHomePageMobile.png" alt="Weatherly Screenshot">
+ <img src="public/images/weatherlyNoWeatherMobile.png" alt="Weatherly Screenshot">
+ <img src="public/images/weatherly8DayMobile.png" alt="Weatherly Screenshot">
 </div>
 
 ## Getting Started
