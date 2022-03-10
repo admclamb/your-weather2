@@ -10,6 +10,6 @@ export const getWeather = async (coords, unitOfMeasure) => {
       return { status: 200, ...weatherFromAPI };
     }
   } else {
-    return { error: "Coods Not available" };
+    return { error: "Coords Not available" };
   }
 };
