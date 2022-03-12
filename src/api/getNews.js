@@ -7,5 +7,4 @@ export async function getNews() {
   if (newsFromAPI) {
     return newsFromAPI;
   }
-  return { error: "No news data available" };
 }
