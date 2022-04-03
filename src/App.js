@@ -10,6 +10,7 @@ import { getNews } from "./api/getNews";
 import { getAirPollution } from "./api/getAirPollution";
 function App() {
   const [weather, setWeather] = useState({});
+  const [errors, setErrors] = useState([]);
   const [location, setLocation] = useState({});
   const [airPollution, setAirPollution] = useState({});
   const [coords, setCoords] = useState({});
@@ -21,20 +22,25 @@ function App() {
     const abortController = new AbortController();
     getWeather(coords, unitOfMeasure)
       .then((response) => setWeather(response))
-      .catch((error) => console.log(error));
+      .catch((response) =>
+        setErrors((currErrors) => [...currErrors], response)
+      );
 
     getLocation(coords)
       .then((response) => setLocation(response))
-      .catch((error) => console.log(error));
+      .catch((response) =>
+        setErrors((currErrors) => [...currErrors], response)
+      );
 
     getAirPollution(coords)
       .then((response) => setAirPollution(response))
-      .catch((error) => console.log(error));
+      .catch((response) =>
+        setErrors((currErrors) => [...currErrors], response)
+      );
     return () => {
       abortController.abort();
     };
   }, [coords, unitOfMeasure]);
-
   useEffect(() => {
     const abortController = new AbortController();
     // Get weather on page load if user allows geolocation
@@ -77,6 +83,7 @@ function App() {
           setUnitOfMeasure={setUnitOfMeasure}
           airPollution={airPollution}
           coords={coords}
+          errors={errors}
         />
       )) || <NoWeather setCoords={setCoords} news={news} />}
     </div>

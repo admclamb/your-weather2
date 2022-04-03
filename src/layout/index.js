@@ -16,10 +16,16 @@ const Layout = ({
   setUnitOfMeasure,
   airPollution,
   coords,
+  errors,
 }) => {
   return (
     <>
-      <Header weather={weather} setCoords={setCoords} location={location} />
+      <Header
+        weather={weather}
+        setCoords={setCoords}
+        location={location}
+        errors={errors}
+      />
       <Routes>
         <Route
           path="/daily"

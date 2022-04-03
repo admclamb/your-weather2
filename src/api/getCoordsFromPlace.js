@@ -3,7 +3,6 @@ import { validateLocationSearch } from "../utils/validateLocationSearch";
 export async function getCoordsFromPlace(city) {
   try {
     const formattedCity = await validateLocationSearch(city);
-    console.log(formattedCity);
     const KEY = process.env.REACT_APP_OPEN_API_KEY;
     const limit = 5;
     const response = await fetch(
@@ -15,6 +14,6 @@ export async function getCoordsFromPlace(city) {
     const { lat, lon } = await responseFromApi[0];
     return { lat, lon };
   } catch (error) {
-    return {};
+    return error;
   }
 }
