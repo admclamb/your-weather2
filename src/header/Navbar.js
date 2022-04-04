@@ -4,8 +4,6 @@ import SearchForm from "./SearchForm";
 import "./Navbar.css";
 const NavbarUpdated = ({ weather, location, setCoords }) => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
-  console.log(weather, location);
-  console.log(hamburgerActive);
   return (
     <nav className="bg-dark text-light">
       <div className="container p-3 d-flex justify-content-between align-items-center">

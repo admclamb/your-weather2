@@ -51,7 +51,7 @@ function App() {
         const lon = coords.longitude;
         setCoords({ lat, lon });
       } catch (error) {
-        console.log(error);
+        setErrors((currError) => [...currError, error]);
       }
     };
     // Get news on page load
@@ -60,7 +60,7 @@ function App() {
         const newsFromAPI = await getNews();
         setNews(newsFromAPI);
       } catch (error) {
-        console.log(error);
+        setErrors((currError) => [...currError, error]);
       }
     };
     getNewsData();
@@ -70,7 +70,7 @@ function App() {
       abortController.abort();
     };
   }, []);
-  console.log(coords);
+  console.log("errors ===>", errors);
   return (
     <div className="App">
       {(objHasProperties(weather) && (

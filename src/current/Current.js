@@ -5,7 +5,9 @@ import { objHasProperties } from "../utils/objHasProperties";
 import Spinner from "../utils/Spinner";
 
 const Current = ({ weather, location }) => {
-  if (!objHasProperties(weather)) return <Spinner />;
+  console.log(weather, location);
+  if (!objHasProperties(weather) || !objHasProperties(location))
+    return <Spinner />;
   const { humidity, wind_speed, dt, temp, feels_like } = weather.current;
   const { main, icon } = weather.current.weather[0];
   const time = unixToHHMM(dt) + addMeridiem(dt);

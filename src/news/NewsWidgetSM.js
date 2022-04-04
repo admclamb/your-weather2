@@ -3,7 +3,11 @@ import { objHasProperties } from "../utils/objHasProperties";
 
 const NewsWidgetSM = ({ news, index }) => {
   if (objHasProperties(news) && news.status === "success") {
-    if (news.results) {
+    if (
+      news.results &&
+      Array.isArray(news.results) &&
+      news.results.length > 0
+    ) {
       const { creator, title, link, image_url } = news.results[index];
       return (
         <div className="border p-3 mt-3 bg-light">
