@@ -16,7 +16,7 @@ const Layout = ({
   setUnitOfMeasure,
   airPollution,
   coords,
-  errors,
+  error,
 }) => {
   return (
     <>
@@ -24,7 +24,7 @@ const Layout = ({
         weather={weather}
         setCoords={setCoords}
         location={location}
-        errors={errors}
+        error={error}
       />
       <Routes>
         <Route

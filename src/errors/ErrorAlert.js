@@ -1,12 +1,10 @@
-const ErrorAlert = ({ errors }) => {
-  if (Array.isArray(errors) && errors.length > 0) {
-    return (
-      <div class="alert alert-danger" role="alert">
-        Error: {errors.join(", ")}
-      </div>
-    );
-  }
-  return null;
-};
+function ErrorAlert({ error }) {
+  return (
+    (error && (
+      <div className="alert alert-danger mt-2 mb-2">Error: {error.message}</div>
+    )) ||
+    null
+  );
+}
 
 export default ErrorAlert;

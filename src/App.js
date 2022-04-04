@@ -10,7 +10,7 @@ import { getNews } from "./api/getNews";
 import { getAirPollution } from "./api/getAirPollution";
 function App() {
   const [weather, setWeather] = useState({});
-  const [errors, setErrors] = useState([]);
+  const [error, setError] = useState();
   const [location, setLocation] = useState({});
   const [airPollution, setAirPollution] = useState({});
   const [coords, setCoords] = useState({});
@@ -22,21 +22,15 @@ function App() {
     const abortController = new AbortController();
     getWeather(coords, unitOfMeasure)
       .then((response) => setWeather(response))
-      .catch((response) =>
-        setErrors((currErrors) => [...currErrors], response)
-      );
+      .catch(setError);
 
     getLocation(coords)
       .then((response) => setLocation(response))
-      .catch((response) =>
-        setErrors((currErrors) => [...currErrors], response)
-      );
+      .catch(setError);
 
     getAirPollution(coords)
       .then((response) => setAirPollution(response))
-      .catch((response) =>
-        setErrors((currErrors) => [...currErrors], response)
-      );
+      .catch(setError);
     return () => {
       abortController.abort();
     };
@@ -51,7 +45,7 @@ function App() {
         const lon = coords.longitude;
         setCoords({ lat, lon });
       } catch (error) {
-        setErrors((currError) => [...currError, error]);
+        setError((currError) => [...currError, error]);
       }
     };
     // Get news on page load
@@ -60,7 +54,7 @@ function App() {
         const newsFromAPI = await getNews();
         setNews(newsFromAPI);
       } catch (error) {
-        setErrors((currError) => [...currError, error]);
+        setError(error);
       }
     };
     getNewsData();
@@ -70,7 +64,6 @@ function App() {
       abortController.abort();
     };
   }, []);
-  console.log("errors ===>", errors);
   return (
     <div className="App">
       {(objHasProperties(weather) && (
@@ -83,7 +76,7 @@ function App() {
           setUnitOfMeasure={setUnitOfMeasure}
           airPollution={airPollution}
           coords={coords}
-          errors={errors}
+          error={error}
         />
       )) || <NoWeather setCoords={setCoords} news={news} />}
     </div>
