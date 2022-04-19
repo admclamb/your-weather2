@@ -10,7 +10,7 @@ import { getNews } from "./api/getNews";
 import { getAirPollution } from "./api/getAirPollution";
 function App() {
   const [weather, setWeather] = useState({});
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
   const [location, setLocation] = useState({});
   const [airPollution, setAirPollution] = useState({});
   const [coords, setCoords] = useState({});
@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     setWeather({});
+    setError(null);
     const abortController = new AbortController();
     getWeather(coords, unitOfMeasure)
       .then((response) => setWeather(response))
@@ -36,6 +37,7 @@ function App() {
     };
   }, [coords, unitOfMeasure]);
   useEffect(() => {
+    setError(null);
     const abortController = new AbortController();
     // Get weather on page load if user allows geolocation
     const getCoordinates = async () => {
@@ -59,7 +61,7 @@ function App() {
       abortController.abort();
     };
   }, []);
-  console.log(error);
+  console.log(error ? error.message : "No error");
   return (
     <div className="App">
       {(objHasProperties(weather) && (
