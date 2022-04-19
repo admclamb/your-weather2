@@ -11,8 +11,7 @@ export async function getCoordsFromPlace(city) {
       },&limit=${limit}&appid=${KEY}`
     );
     const responseFromApi = await response.json();
-    const { lat, lon } = await responseFromApi[0];
-    return { lat, lon };
+    return ({ lat, lon } = await responseFromApi[0]);
   } catch (error) {
     return error;
   }

@@ -6,10 +6,7 @@ export async function getLocation({ lat, lon }) {
       const response = await fetch(
         `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=${limit}&appid=${KEY}`
       );
-      const locationFromAPI = await response.json();
-      if (locationFromAPI) {
-        return { status: 200, ...locationFromAPI };
-      }
+      return await response.json();
     }
   } catch (error) {
     return error;

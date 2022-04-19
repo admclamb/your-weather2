@@ -6,8 +6,7 @@ export async function getAirPollution(coords) {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${KEY}`
       );
-      const pollutionFromAPI = await response.json();
-      return { status: 200, ...pollutionFromAPI };
+      return await response.json();
     }
   } catch (error) {
     return error;
