@@ -4,24 +4,25 @@ import Spinner from '../utils/Spinner';
 import DailyWeather from './DailyWeather';
 import './Forecast.css';
 const Forecast = ({ weather }) => {
-  if (!objHasProperties('weather') && !Array.isArray(weather.daily)) {
+  if (!objHasProperties(weather) && !Array.isArray(weather.daily)) {
     return <Spinner />;
-  }
-  const weatherPerDay = weather.daily.map((day, index) => {
-    if (index < 5) {
-      return <DailyWeather day={day} index={index} key={index} />;
-    }
-    return;
-  });
+  } else {
+    const weatherPerDay = weather.daily.map((day, index) => {
+      if (index < 5) {
+        return <DailyWeather day={day} index={index} key={index} />;
+      }
+      return;
+    });
 
-  return (
-    <div className="border p-3 bg-light mt-3">
-      <h5 className="mb-3">Daily Weather</h5>
-      <div className="d-flex justify-content-between weather-per-day">
-        {weatherPerDay}
+    return (
+      <div className="border p-3 bg-light mt-3">
+        <h5 className="mb-3">Daily Weather</h5>
+        <div className="d-flex justify-content-between weather-per-day">
+          {weatherPerDay}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Forecast;
