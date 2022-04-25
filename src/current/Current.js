@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { unixToHHMM, addMeridiem } from '../utils/formatTime';
 import { objHasProperties } from '../utils/objHasProperties';
-import Spinner from '../utils/Spinner';
 
 const Current = ({ weather, location }) => {
   console.log(weather, location);
