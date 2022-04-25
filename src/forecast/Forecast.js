@@ -1,11 +1,12 @@
-import React from "react";
-import { objHasProperties } from "../utils/objHasProperties";
-import Spinner from "../utils/Spinner";
-import DailyWeather from "./DailyWeather";
-import "./Forecast.css";
+import React from 'react';
+import { objHasProperties } from '../utils/objHasProperties';
+import Spinner from '../utils/Spinner';
+import DailyWeather from './DailyWeather';
+import './Forecast.css';
 const Forecast = ({ weather }) => {
-  if (!objHasProperties(weather) && !Array.isArray(weather.daily))
+  if (!objHasProperties('weather') && !Array.isArray(weather.daily)) {
     return <Spinner />;
+  }
   const weatherPerDay = weather.daily.map((day, index) => {
     if (index < 5) {
       return <DailyWeather day={day} index={index} key={index} />;

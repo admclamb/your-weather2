@@ -1,18 +1,16 @@
-import React from "react";
-import MainNews from "../news/MainNews";
-import NationalAlerts from "../nationalAlerts/NationalAlerts";
-import Current from "../current/Current";
-import Forecast from "../forecast/Forecast";
-import AirQuality from "../airPollution/AirQuality";
-import NewsWidgetSM from "../news/NewsWidgetSM";
-import Hourly from "../hourly/Hourly";
+import React from 'react';
+import MainNews from '../news/MainNews';
+import NationalAlerts from '../nationalAlerts/NationalAlerts';
+import Current from '../current/Current';
+import Forecast from '../forecast/Forecast';
+import AirQuality from '../airPollution/AirQuality';
+import NewsWidgetSM from '../news/NewsWidgetSM';
+import Hourly from '../hourly/Hourly';
 const Home = ({ weather, news, location, airPollution }) => {
   return (
     <main className="container mb-4 home">
       <section className="row">
-        <article className="col-12">
-          <MainNews news={news} />
-        </article>
+        <article className="col-12">{news && <MainNews news={news} />}</article>
       </section>
       <section className="row">
         <article className="col col-12 col-md-8">
