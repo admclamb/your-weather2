@@ -7,7 +7,7 @@
 - The Technologies used in the application are BootStrap5, CSS, JavaScript, React, React hooks, React State, and API Calls.
 
 - THIS APPLICATION IS CURRENTLY IN TESTING\*\*
-- 
+
 ## Deployed version
 
 [WeatherlyDeployment](https://obscure-reaches-21818.herokuapp.com/)
